@@ -27,10 +27,10 @@ jobs:
       # Set AWS Credentials from GitHub Secrets
       - name: Configure AWS Credentials
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ env.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ env.SECRET_KEY }}
         run: |
-          echo "AWS credentials configured."
+          echo "AWS credentials configured."$ {{ env.ACCESS_KEY }}
 
       # Terraform Init
       - name: Terraform Init
