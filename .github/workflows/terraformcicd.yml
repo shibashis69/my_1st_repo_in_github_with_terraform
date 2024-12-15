@@ -46,7 +46,6 @@ jobs:
 
       # Terraform Plan
       - name: Terraform Plan
-        id: plan
         run: terraform plan
 
       # Terraform Apply (only on push to main)
