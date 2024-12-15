@@ -31,16 +31,18 @@ resource "aws_subnet" "s24SubnetWan" {
   }
 }
 
-resource "aws_route_table" "ManagementRouteTable"
+resource "aws_route_table" "ManagementRouteTable" {
   vpc_id     = aws_vpc.s24Vpc.id
   route {
     cidr_block = aws_subnet.s24SubnetManagement.cidr_block
 }
+}
 
-resource "aws_route_table" "WanRouteTable"
+resource "aws_route_table" "WanRouteTable" {
   vpc_id     = aws_vpc.s24Vpc.id
   route {
     cidr_block = aws_subnet.s24SubnetWan.cidr_block
+}
 }
 
 
